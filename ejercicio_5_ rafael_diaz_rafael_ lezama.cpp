@@ -1,17 +1,25 @@
 #include <iostream>
 #include <string>
-#include <limits>
-
-using namespace std;
+#include <algorithm>
 
 int main() {
-    char repetir;
-    do { 
-        string palabra, alReves = "";
-        string limpia = "";
-        
-        cout << "Frase: ";
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-        getline(cin, palabra);
+    std::string p;
+    std::string r;
+
+    std::cout << "Dame una palabra: ";
+    std::cin >> p;
+
+    r = p;
+
+    std::reverse(r.begin(), r.end());
+
+    if (p == r) {
+        std::cout << "Es PALINDROMO." << std::endl;
+    } else {
+        std::cout << "NO es palindromo." << std::endl;
+    }
+
+    return 0;
+}
 
 
